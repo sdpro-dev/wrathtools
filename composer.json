@@ -1,0 +1,14 @@
+{
+    "name": "wrath/wrath-works",
+    "description": "A framework by Christopher Ciampoli",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Christopher Steven Ciampoli",
+            "email": "admin@sdpro.dev"
+        }
+    ],
+    "require": {
+        "symfony/http-foundation": "^5.2"
+    }
+}
