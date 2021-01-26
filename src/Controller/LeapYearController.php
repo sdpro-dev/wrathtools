@@ -5,6 +5,7 @@
  */
 namespace Controller;
 
+use JetBrains\PhpStorm\Pure;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -14,11 +15,6 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class LeapYearController
 {
-    /**
-     * @param Request $request
-     *
-     * @return Response
-     */
     public function index(Request $request): Response
     {
         if ($this->checkLeapYear($request->attributes->get('year'))) {
@@ -34,7 +30,7 @@ class LeapYearController
      *
      * @return bool
      */
-    private function checkLeapYear(string $year): Bool
+    #[Pure] private function checkLeapYear(string $year): Bool
     {
         if (null === $year) {
             $year = date('Y');
