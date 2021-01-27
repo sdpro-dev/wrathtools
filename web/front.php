@@ -1,4 +1,8 @@
 <?php
+/**
+ * WrathTools by SDPRO DEV
+ * @author Christopher Ciampoli
+ */
 require_once __DIR__.'/../vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;

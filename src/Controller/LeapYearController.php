@@ -3,7 +3,7 @@
  * WrathTools by SDPRO DEV
  * @author Christopher Ciampoli
  */
-namespace Controller;
+namespace Wrath\Controller;
 
 use JetBrains\PhpStorm\Pure;
 use Symfony\Component\HttpFoundation\Request;
