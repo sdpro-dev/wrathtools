@@ -1,6 +1,6 @@
 <?php
 
-namespace Controller;
+namespace Calendar\Tests\Controller;
 
 use PHPUnit\Framework\TestCase;
 
