@@ -3,7 +3,7 @@
  * WrathTools by SDPRO DEV
  * @author Christopher Ciampoli
  */
-namespace Wrath\View;
+namespace Calendar\View;
 
 use Symfony\Component\HttpFoundation\Response;
 
