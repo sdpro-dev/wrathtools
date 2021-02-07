@@ -5,6 +5,7 @@
  */
 namespace Calendar\Controller;
 
+use Calendar\Model\LeapYear;
 use JetBrains\PhpStorm\Pure;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,13 +16,14 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class LeapYearController
 {
-    public function index(Request $request): Response
+    public function index(Request $request, $year): Response
     {
-        if ($this->checkLeapYear($request->attributes->get('year'))) {
-            return new Response('Yep, this is a leap year!');
+        $leapYear = new LeapYear();
+        if ($leapYear->isLeapYear($year)) {
+            return new Response('Yep sure is!');
         }
 
-        return new Response('Nope, this is not a leap year.');
+        return new Response('Nope it isnt!');
     }
 
     /**
