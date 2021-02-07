@@ -1,7 +1,8 @@
 <?php
-/**
+/*
  * WrathTools by SDPRO DEV
  * @author Christopher Ciampoli
+ *
  */
 use Symfony\Component\Routing;
 use Calendar\Controller\LeapYearController;

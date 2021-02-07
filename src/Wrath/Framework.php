@@ -1,8 +1,10 @@
 <?php
-
-
+/*
+ * WrathTools by SDPRO DEV
+ * @author Christopher Ciampoli
+ *
+ */
 namespace Wrath;
-
 
 use Exception;
 use Symfony\Component\HttpFoundation\Request;

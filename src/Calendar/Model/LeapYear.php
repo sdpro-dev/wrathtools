@@ -1,4 +1,9 @@
 <?php
+/*
+ * WrathTools by SDPRO DEV
+ * @author Christopher Ciampoli
+ *
+ */
 namespace Calendar\Model;
 
 use JetBrains\PhpStorm\Pure;
