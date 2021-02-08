@@ -22,6 +22,6 @@ class LeapYearController
             return new Response('Yep sure is!');
         }
 
-        return new Response('Nope it isnt!');
+        return new Response('Nope it isn\'t!');
     }
 }

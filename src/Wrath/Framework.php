@@ -12,16 +12,16 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface;
 use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
-use Symfony\Component\Routing\Matcher\UrlMatcher;
+use Symfony\Component\Routing\Matcher\UrlMatcherInterface;
 
 class Framework
 {
-    private UrlMatcher         $matcher;
+    private UrlMatcherInterface         $matcher;
     private ControllerResolverInterface $controllerResolver;
     private ArgumentResolverInterface   $argumentResolver;
 
     public function __construct(
-        UrlMatcher $matcher,
+        UrlMatcherInterface $matcher,
         ControllerResolverInterface $controllerResolver,
         ArgumentResolverInterface $argumentResolver)
     {
