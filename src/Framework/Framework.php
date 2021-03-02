@@ -4,7 +4,7 @@
  * @author Christopher Ciampoli
  *
  */
-namespace Wrath;
+namespace Framework;
 
 use Exception;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,9 +25,9 @@ class Framework
         ControllerResolverInterface $controllerResolver,
         ArgumentResolverInterface $argumentResolver)
     {
-        $this->matcher            = $matcher;
+        $this->matcher = $matcher;
         $this->controllerResolver = $controllerResolver;
-        $this->argumentResolver   = $argumentResolver;
+        $this->argumentResolver = $argumentResolver;
     }
 
     public function handle(Request $request)

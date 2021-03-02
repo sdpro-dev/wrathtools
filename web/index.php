@@ -36,7 +36,7 @@ $matcher = new Routing\Matcher\UrlMatcher($routes, $context);
 $controllerResolver = new HttpKernel\Controller\ControllerResolver();
 $argumentResolver   = new HttpKernel\Controller\ArgumentResolver();
 
-$framework = new Wrath\Framework($matcher, $controllerResolver, $argumentResolver);
+$framework = new Framework\Framework($matcher, $controllerResolver, $argumentResolver);
 $response  = $framework->handle($request);
 
 $response->send();
