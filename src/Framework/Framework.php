@@ -7,6 +7,7 @@
 namespace Framework;
 
 use Exception;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface;
@@ -16,6 +17,7 @@ use Symfony\Component\Routing\Matcher\UrlMatcherInterface;
 
 class Framework
 {
+    private EventDispatcherInterface    $dispatcher;
     private UrlMatcherInterface         $matcher;
     private ControllerResolverInterface $controllerResolver;
     private ArgumentResolverInterface   $argumentResolver;
@@ -23,11 +25,13 @@ class Framework
     public function __construct(
         UrlMatcherInterface $matcher,
         ControllerResolverInterface $controllerResolver,
-        ArgumentResolverInterface $argumentResolver)
+        ArgumentResolverInterface $argumentResolver,
+        EventDispatcherInterface $dispatcher)
     {
-        $this->matcher = $matcher;
+        $this->dispatcher         = $dispatcher;
+        $this->matcher            = $matcher;
         $this->controllerResolver = $controllerResolver;
-        $this->argumentResolver = $argumentResolver;
+        $this->argumentResolver   = $argumentResolver;
     }
 
     public function handle(Request $request)
