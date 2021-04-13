@@ -6,7 +6,7 @@
  */
 namespace Controller;
 
-use Calendar\Model\LeapYear;
+use Model\LeapYear;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

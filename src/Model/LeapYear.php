@@ -6,11 +6,17 @@
  */
 namespace Model;
 
-use JetBrains\PhpStorm\Pure;
-
+/**
+ * Class LeapYear
+ * @package Model
+ */
 class LeapYear
 {
-    #[Pure] public function isLeapYear($year = null): bool {
+    /**
+     * @param null $year
+     * @return bool
+     */
+    public function isLeapYear($year = null): bool {
         if (null === $year) {
             $year = date('Y');
         }

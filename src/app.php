@@ -4,18 +4,21 @@
  * @author Christopher Ciampoli
  *
  */
+
+use Controller\CapsController;
 use Symfony\Component\Routing;
-use Calendar\Controller\LeapYearController;
+use Controller\LeapYearController;
+use Symfony\Component\Routing\Route;
 
 $routes = new Routing\RouteCollection();
-$routes->add('leap_year', new Routing\Route('/is_leap_year/{year}', [
+$routes->add('leap_year', new Route('/is_leap_year/{year}', [
     'year' => null,
     '_controller' => [new LeapYearController(), 'index'],
 ]));
 
-$routes->add('caps', new Routing\Route('/cap_it/{word}', [
+$routes->add('caps', new Route('/cap_it/{word}', [
     'word' => null,
-    '_controller' => [new \Calendar\Controller\CapsController(), 'index'],
+    '_controller' => [new CapsController(), 'index'],
 ]));
 
 

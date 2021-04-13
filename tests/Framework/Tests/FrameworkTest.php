@@ -5,20 +5,24 @@
  *
  */
 
-namespace Wrath\Tests;
+namespace Framework\Tests;
 
-use Calendar\Controller\LeapYearController;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
-use Symfony\Component\HttpKernel\Controller\ArgumentResolver;
-use Symfony\Component\HttpKernel\Controller\ControllerResolver;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Framework\Framework;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface;
 use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
 use Symfony\Component\Routing;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
+use Symfony\Component\Routing\Matcher\UrlMatcherInterface;
 
+/**
+ * Class FrameworkTest
+ * @covers \Framework\Framework
+ * @package Framework\Tests
+ */
 class FrameworkTest extends TestCase
 {
     public function testNotFoundHandling()
@@ -41,7 +45,7 @@ class FrameworkTest extends TestCase
 
     private function getFrameworkForException($exception): Framework
     {
-        $matcher = $this->createMock(Routing\Matcher\UrlMatcherInterface::class);
+        $matcher = $this->createMock(UrlMatcherInterface::class);
         // use getMock() on PHPUnit 5.3 or below
         // $matcher = $this->getMock(Routing\Matcher\UrlMatcherInterface::class);
 
@@ -57,7 +61,8 @@ class FrameworkTest extends TestCase
         ;
         $controllerResolver = $this->createMock(ControllerResolverInterface::class);
         $argumentResolver = $this->createMock(ArgumentResolverInterface::class);
+        $dispatcher       = $this->createMock(EventDispatcherInterface::class);
 
-        return new Framework($matcher, $controllerResolver, $argumentResolver);
+        return new Framework($matcher, $controllerResolver, $argumentResolver, $dispatcher);
     }
 }

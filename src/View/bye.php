@@ -3,10 +3,10 @@
  * WrathTools by SDPRO DEV
  * @author Christopher Ciampoli
  */
-namespace Calendar\View;
+namespace View;
 
 use Symfony\Component\HttpFoundation\Response;
 
-/** @var Response $response */
+$response = new Response();
 $response->setContent('Goodbye!');
 $response->send();
